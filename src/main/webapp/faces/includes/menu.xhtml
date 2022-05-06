@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+       
+            <li><a href="#" class="MenuBarItemSubmenu">Autores</a>
+                <c:if test="#{request.isUserInRole('administrativos')}">
+                    <ul>
+                        <li>
+                            <a href="#{application.contextPath}/admin/altaautor.xhtml">Nuevo Autor </a>
+                        </li>
+                        <li>
+                            <a href="#{application.contextPath}/admin/modificaautor.xhtml">Modifica Autor </a>
+                        </li>
+                        <li>
+                            <a href="#{application.contextPath}/listadoautores.xhtml">Listado de Autores</a>
+                        </li>
+                    </ul>
+                </c:if>
+                <c:if test="#{request.isUserInRole('socios')}">
+                    <ul>
+                        <li>
+                            <a href="#{application.contextPath}/listadoautores.xhtml">Listado de Autores</a>
+                        </li>
+                    </ul>
+                </c:if>
+            </li>
+        
+        <li><a class="MenuBarItemSubmenu" href="#">Sesion</a>
+            <ul>
+                <li><a href="#{application.contextPath}/seguridad/login.xhtml" onclick="#{session.invalidate()}">Logout</a></li>
+            </ul>
+        </li>
+        <li><a class="MenuBarItemSubmenu" href="#">Test</a>
+            <ul>
+                <li><a
+                        href="../controller?operacion=testConexion">Test Conexión</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script type="text/javascript">
+        var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {
+            imgDown: "../resources/img/SpryMenuBarDownHover.gif",
+            imgRight: "../resources/img/SpryMenuBarRightHover.gif"
+        });
+    </script>
+</ui:composition>
+

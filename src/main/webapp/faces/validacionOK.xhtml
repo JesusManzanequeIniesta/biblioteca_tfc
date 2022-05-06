@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta charset="UTF-8">
+            <title>Validación OK</title>
+    </h:head>
+    <h:body>
+        <div id="container">
+            <c:if test="${token != null}">
+                <div id="divconfirmacion">
+                    <p>
+                        <strong>Mensaje:</strong> <br>
+                            Email ${token.email} validado <br>
+                            Recibirá un SMS al teléfono ${token.telefono} con la clave de acceso <br>
+                            El origen del mensaje será AZARQUIEL<br>
+                    </p>
+                </div>
+                <div class="botones">
+                    <a href="/socios/home.xhtml" title="inicio"> Pulsa para entrar</a>
+                </div>
+            </c:if>
+        </div>
+    </h:body>
+</html>
+

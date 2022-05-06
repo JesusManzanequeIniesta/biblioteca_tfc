@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta charset="UTF-8">
+            <title>Insert title here</title>
+            <ui:include src="/includes/include.xhtml"/>
+    </h:head>
+    <h:body>
+        <div id="container">
+            <div id="header"></div>
+            <div id="tabla">
+                <c:if test="${socio != null}">
+                    <table class="table tablaconborde">
+                        <caption>Sus datos han sido registrados <br>
+                                Recibirá un correo para activar la cuenta</caption>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">TELEFONO</th>
+                        </tr>
+                        <tr>
+                            <td>${socio.id}</td>
+                            <td>${socio.nombre}</td>
+                            <td>${socio.email}</td>
+                            <td>${socio.telefono}</td>
+                        </tr>
+                    </table>
+                    <div class="botones">
+                        <a href="index.jsp" title="inicio">Login</a>
+                    </div>
+                </c:if>
+            </div>
+        </div>
+    </h:body>
+</html>
+

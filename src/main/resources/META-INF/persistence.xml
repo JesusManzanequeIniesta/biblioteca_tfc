@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="bibliotecatfc" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/Biblioteca</jta-data-source>
+    <class>com.jmi.bibliotecatfc.entities.GeneratorTable</class>
+    <class>com.jmi.bibliotecatfc.entities.Grupos</class>
+    <class>com.jmi.bibliotecatfc.entities.Socio</class>
+    <class>com.jmi.bibliotecatfc.entities.Peticion</class>
+    <class>com.jmi.bibliotecatfc.entities.Usuarios</class>
+    <class>com.jmi.bibliotecatfc.entities.Prestamo</class>
+    <class>com.jmi.bibliotecatfc.entities.Estado</class>
+    <class>com.jmi.bibliotecatfc.entities.Ejemplar</class>
+    <class>com.jmi.bibliotecatfc.entities.Autor</class>
+    <class>com.jmi.bibliotecatfc.entities.Libro</class>
+    <class>com.jmi.bibliotecatfc.entities.Tiposancion</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="eclipselink.logging.level" value="SEVERE"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template.xhtml" 
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="title"> Registro automático Libro</ui:define>
+    <ui:define name="content">
+        <c:if test="${error != null}">
+            <div id="diverror">
+		<p>
+                    <strong>Error:</strong> <br>
+                    #{beanLibro.error}
+		</p>
+            </div>
+	</c:if>
+	<c:if test="${libro != null}">
+            <div id="divconfirmacion">
+		<p>
+                    <strong>Libro dado de alta</strong> <br>
+                    #{beanLibro.libro.Titulo}
+		</p>
+            </div>
+	</c:if>
+		<c:if test="#{ejemplar != null}">
+			<div id="divconfirmacion">
+				<p>
+					<strong>Le corresponde el ejemplar</strong> 
+					#{beanLibro.ejemplar.codBarras}
+				</p>
+				<embed src="generados/Ejemplar_#{beanLibro.ejemplar.codBarras}.pdf#zoom=300" type="application/pdf" width="640px" height="300px" />
+			</div>
+		</c:if>
+		<div id="formRegistroAutomaticoLibro" class="formulariogeneral">
+			<form name="formRegistroAutomaticoLibro" method="get"
+                              action="#{beanLibro.registroAutomáticoLibro(isbn)}">
+				<fieldset id="datosLibro">
+					<legend><img src="resources/img/azarquiel.gif">&nbsp;Alta Libro</legend>
+					<div class="etiquetas">
+						<label for="isbn">ISBN:</label>
+					</div>
+					<div class="campos">
+						<!-- autofocus pone ahí el enfoque en cuento se carga -->
+						<input type="text" id="isbn" name="isbn" autofocus="true" /> 
+					</div>
+					<div class="cb"></div>
+					<div class="cb"></div>
+					<div class="botones">	
+							<input type="submit" name="Submit" value="Alta"/>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div id="separacion">
+			<br>
+		</div>
+    </ui:define>
+</ui:composition>
+

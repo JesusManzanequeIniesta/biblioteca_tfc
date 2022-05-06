@@ -1,0 +1,194 @@
+body {
+	background-color: #DBC493;
+	font-family:Verdana, Geneva, sans-serif;
+}
+#container {
+	background-color: #C5B26D;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size:16px;
+}
+#header {
+	background-image: url("../resources/img/logo.jpg");
+	height: 175px;
+	width: 800px;
+}
+#menu{
+	font-size: 16px;
+	width: 80%;
+	height: 40px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 8px;
+	margin-bottom: 10px;
+}
+#diverror{
+  font-size: 16px;    
+  color:#610B21;         
+  width: 640px;      
+  margin-right: auto;   
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color:#ffe6e6;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+#diverror p{
+   padding-left:40px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+#divconfirmacion{
+  font-size: 16px;    
+  color:#009930;         
+  width: 640px;        
+  margin-right: auto;   
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color:#e6ffee;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+#divconfirmacion p{
+   padding-left:40px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+#paginacion{
+	margin-left:125px;
+}
+#registro{
+	float:right;
+}
+.formulariogeneral{
+    font-size: 16px;
+	width: 550px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+.formulariogeneral table{
+  width:80%;	
+}
+form fieldset{
+  /* border-radius: 1em;*/
+}
+.formulariogeneral fieldset legend{
+	/*background: url(../img/azarquiel.gif) no-repeat left;*/
+    padding-left:0.25em;
+}
+
+form fieldset div.etiquetas {
+	width: 35%;
+	float: left;
+	text-align: right;
+	margin-top: 10px;	
+}
+form fieldset div.campos {
+	width: 64%;
+	float: left;
+	margin-top: 10px;	
+	margin-left: 1%;
+}
+form fieldset div.campos input{
+	width:60%;
+}
+.cb {
+    clear: both;
+}
+div.botones{
+	width:50%;
+    margin-top:20px;
+    margin-left:35%;
+    padding-left:0.5em;
+
+}
+div.botones input {
+
+	font-size: 1.25em;
+	letter-spacing: 1.15px;	
+}
+div.botones a {
+
+	font-size: 1.25em;
+	letter-spacing: 1.15px;	
+}
+
+/*
+.formulariogeneral fieldset  input{
+	padding: 5px;
+	border-radius: 7px;
+	border: none;
+}*/
+.advertencia{
+	font-size: 20px;
+	color:red;
+}
+a {
+	color: #483211;
+	text-decoration:none;
+}
+a:hover{
+	color: #EDE2D1;
+	background-color: #483211;
+}
+#tabla{
+	font-size: 16px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+    
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+table th,table td{
+    padding:0.50em;
+}
+.tablaconborde{
+	border: 2px solid #7a8a9a ;
+}
+.tablaconborde td,.tablaconborde th{
+	border: 1px solid #7a8a9a ;
+}
+.tablacebra thead th{
+    background-color:#AA9F55;
+	color:white;
+}
+.tablacebra tr:nth-child(even){
+    background-color: #AA9F55;
+	color:white;
+}
+.tablacebra tr:nth-child(odd){
+	background-color:#FEFAD8;
+}
+.tablaconborde td, .tablaconborde th {
+    border: 2px solid #7a8a9a ;
+}
+
+td.txtcentrado{
+	text-align:center;
+}
+td.txtderecha{
+	text-align:right;
+}
+#tabla caption {
+	color: #FFFFFF;
+	border: 6px outset #483211;
+	background-color: #483211;
+	font-size:36px;
+	margin-top:5px;
+}
+

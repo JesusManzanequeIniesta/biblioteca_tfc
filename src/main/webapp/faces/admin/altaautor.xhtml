@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<ui:composition template="/WEB-INF/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="title">Alta de autor</ui:define>
+
+    <ui:define name="content">
+        <c:if test="#{beanAutor.error != null}">
+            <div id="diverror">
+                <p>
+                    <strong><p>Error:</p></strong> <br/>
+                    <p>#{beanAutor.error}</p>
+                </p>
+            </div>
+        </c:if>
+        <c:if test="#{beanAutor.confirmaroperacion != null}">
+            <div id="divconfirmacion">
+                <p>
+                    <strong><p>Mensaje:</p></strong> <br/>
+                    <p>#{beanAutor.confirmaroperacion}</p>
+                </p>
+            </div>
+        </c:if>
+        <div id="formAutor" class="formulariogeneral">
+            <form name="frmAutor" method="POST">
+                <fieldset id="datosAutor">
+                    <h:form>
+                        <legend><img src="#{application.contextPath}/resources/img/azarquiel.gif"/>&nbsp;Alta de Autor</legend>
+                        <p:inputText value="#{beanAutor.nombre}" />
+                        <h:commandButton type="submit" value="Submit" action="altaautor" onclick="#{beanAutor.inserta()}" />
+                    </h:form>
+                </fieldset>
+            </form>
+        </div>
+        <div id="separacion">
+            <br/>
+        </div>
+    </ui:define>
+</ui:composition>
+

@@ -1,0 +1,26 @@
+<ui:composition template="/WEB-INF/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="title">Listado de autores Socios</ui:define>
+    <ui:define name="content">
+        <p:dataTable value = "#{beanAutor.autores}" var = "autor" class="table tablaconborde tablacebra">
+            <p:column headerText="ID">    		
+                #{autor.id}
+            </p:column>
+
+            <p:column headerText="Nombre">
+                #{autor.nombre}
+            </p:column>
+
+        </p:dataTable>		
+        <div id="separacion">
+            <br/>
+        </div>
+    </ui:define>
+</ui:composition>
+

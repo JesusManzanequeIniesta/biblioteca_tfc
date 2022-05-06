@@ -1,0 +1,60 @@
+<ui:composition template="/WEB-INF/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name="title">Modificar autor</ui:define>
+    
+    <ui:define name="content">
+        <c:if test="#{error != null}">
+            <div id="diverror">
+                <p>
+                    <strong><p>Error:</p></strong> <br/>
+                    <p>#{error}</p>
+                </p>
+            </div>
+        </c:if>
+        <c:if test="#{confirmaroperacion != null}">
+            <div id="divconfirmacion">
+                <p>
+                    <strong><p>Mensaje:</p></strong> <br/>
+                    <p>#{confirmaroperacion}</p>
+                </p>
+            </div>
+        </c:if>
+        <div id="formAutor" class="formulariogeneral">
+            <form name="frmAutor" method="get"
+                  action="../controlleradmin">
+                <fieldset id="datosAutor">
+                    <legend><img src="#{application.contextPath}/resources/img/azarquiel.gif"/>&nbsp;Modifica Autor</legend>
+                    <div class="etiquetas">
+                        <label for="nombre">Nuevo nombre:</label>
+                    </div>
+                    <div class="campos">
+                        <input type="text" id="nombre" name="nombre"/> 
+                    </div>
+                    <div class="etiquetas">
+                        <label for="Id">Identificador:</label>
+                    </div>
+                    <div class="campos">
+                        <input type="number" min="1" id="id" name="id"/> 
+                        <input name="operacion" type="hidden" id="operacion"
+                               value="modificaautor"/>
+                    </div>
+                    <div class="cb"></div>
+                    <div class="cb"></div>
+                    <div class="botones">	
+                        <input type="submit" name="Submit" value="Modificar"/>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="separacion">
+            <br/>
+        </div>
+    </ui:define>
+</ui:composition>
+

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:include src="/includes/include.xhtml"/>
+        <title>Nuevo Socio</title>
+        <script src="https://www.google.com/recaptcha/api.js" async="true" defer="true"></script>
+        <script>
+            function onSubmit(token) {
+                document.getElementById("frmSocio").submit();
+            }
+        </script>
+    </h:head>
+    <h:body>
+        <br/>
+        <div id="container">
+            <div id="header"></div>
+            <c:if test="#{requestScope.error != null}">
+                <div id="diverror">
+                    <p>
+                        <strong>Error:</strong> <br/>
+                        #{requestScope.error}
+                        <ui:remove var="error" scope="session" />
+                    </p>
+                </div>
+            </c:if>
+            <div id="divAltaSocio" class="formulariogeneral">
+                <form name="frmSocio" method="post" id="frmSocio"
+                      action="#{pageContext.request.contextPath}/controller">
+                    <fieldset id="datosSocio">
+                        <legend>
+                            <img src="#{application.contextPath}/resources/img/azarquiel.gif"/>&nbsp;Nuevo Socio
+                        </legend>
+                        <div class="etiquetas">
+                            <label for="nombre">Nombre:</label>
+                        </div>
+                        <div class="campos">
+                            <input type="text" id="nombre" name="nombre" required="true" />
+                        </div>
+                        <div class="etiquetas">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="campos">
+                            <input type="email" id="email" name="email" required="true" />
+                        </div>
+                        <div class="etiquetas">
+                            <label for="direccion">Teléfono móvil español:</label>
+                        </div>
+                        <div class="campos">
+                            <input type="tel" id="telefono" name="telefono" 
+                                   pattern="[6-7][0-9]{8}" placeholder="647628264" required="true" /> 
+                            <input name="operacion" type="hidden" id="operacion" value="registrarse"/>
+                        </div>
+                        <div class="cb"></div>
+                        <div class="botones">
+                            <button class="g-recaptcha" data-sitekey="6LdMoW8dAAAAABGkv1R5SdopL17FMcmsfQ2VqVdw" 
+                                    data-callback="onSubmit">Alta</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="separacion">
+                <br/>
+            </div>
+        </div>
+    </h:body>
+</html>
