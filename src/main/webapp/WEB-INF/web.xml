@@ -24,8 +24,8 @@
         <auth-method>FORM</auth-method>
         <realm-name>bibliotecajdbc</realm-name>
         <form-login-config>
-            <form-login-page>/seguridad/login.jsp</form-login-page>
-            <form-error-page>/seguridad/credencialesnovalidas.jsp</form-error-page>
+            <form-login-page>/seguridad/login.xhtml</form-login-page>
+            <form-error-page>/seguridad/credencialesnovalidas.xhtml</form-error-page>
         </form-login-config>
     </login-config>
     
